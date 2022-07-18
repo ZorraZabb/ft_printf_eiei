@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 int ft_printf(const char *str, ...)
 {
     va_list tmp;
@@ -11,7 +13,7 @@ int ft_printf(const char *str, ...)
         {
             str++;
             if (*str == 'c')
-                ft_putchar(va_arg(tmp, char));
+                ft_putchar(va_arg(tmp, int));
             else if (*str == 's')
                 ft_putstr(va_arg(tmp, char *));
             else if (*str == 'p')
@@ -21,7 +23,7 @@ int ft_printf(const char *str, ...)
             else if (*str == 'u')
                 ft_putnbr_un_int(va_arg(tmp, unsigned int));
             else if (*str == 'x' || *str == 'X')
-                ft_putnbr_x(va_arg(tmp, unsigned int));
+                ft_putnbr_x(va_arg(tmp, unsigned int), *str);
             else if (*str == '%')
                 ft_putchar('%');
         }

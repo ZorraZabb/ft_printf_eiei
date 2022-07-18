@@ -1,6 +1,4 @@
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "ft_printf.h"
 
 void    ft_putchar(char c)
 {
@@ -78,7 +76,7 @@ void    ft_putad_mini(unsigned long long int n)
 void    ft_putad(void *address)
 {
     ft_putstr("0x");
-    ft_putnbr_x(address, 'x');
+    ft_putnbr_x((unsigned long long)address, 'x');
 }
 
 void    ft_putnbr_un_int(unsigned int n)
@@ -96,23 +94,22 @@ int main(void)
 {
     int a;
     a = 0;
-    ft_putchar('c');
-    ft_putchar('\n');
-    ft_putstr("abcde");
-    ft_putchar('\n');
-    ft_putnbr(98765432);
-    ft_putchar('\n');
-    ft_putnbr_x(42299, 'x');
-    ft_putchar('\n');
-    ft_putnbr_x(42299, 'X');
-    ft_putchar('\n');
-    ft_putnbr_un_int(4294967295);
-    ft_putchar('\n');
-    ft_putnbr_un_int(-3);
-    ft_putchar('\n');
+    // ft_putchar('c');
+    // ft_putchar('\n');
+    // ft_putstr("abcde");
+    // ft_putchar('\n');
+    // ft_putnbr(98765432);
+    // ft_putchar('\n');
+    // ft_putnbr_x(42299, 'x');
+    // ft_putchar('\n');
+    // ft_putnbr_x(42299, 'X');
+    // ft_putchar('\n');
+    // ft_putnbr_un_int(4294967295);
+    // ft_putchar('\n');
+    // ft_putnbr_un_int(-3);
+    // ft_putchar('\n');
 
-    printf("ADD...[%llu]\n",&a);
-    printf("ADD2..[%p]\n",&a);
+    ft_printf("ADD2..[%p]\n",&a);
 
     ft_putad(&a);
     ft_putchar('\n');
@@ -120,8 +117,6 @@ int main(void)
 
     printf("STRING...[%d], [%c]\n", 1, 'c');
     char* p = NULL;
-    p = "(null)"
+    p = "(null)";
     printf( "%s", p);
 }
-
-s = "(null)";
